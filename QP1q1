@@ -1,0 +1,33 @@
+
+
+ public class Bunnies { 
+ static int count = 0; 
+ Bunnies() {                                            ref is no need fr static mem
+ while(count < 10)                                       0<10 t enters into block
+ {                                                       cals parameter const wit post increment by 1
+ new Bunnies(++count);                                   1<10 t enters into block and cals const by 2
+ }                                                       2<10 3<10 4<10 5<10 6<10 7<10 8<10 9<10 10<10 F                                           
+ }                                                       -----------------------------------
+	 						                                           10<10 F	
+ Bunnies(int x)                                          b(1) here super meth calls parent meth
+ {                                                        -----------------------------------------  
+ super();                                                 B(10) CALLS PARENT METH
+ }                                                                                    
+	 							                                          
+ public static void main(String[] args) { 
+ new Bunnies();                     //calls lIne no 6  after completing the count val is 10     
+new Bunnies(count);                  // //here B(10) after completing the count is same
+System.out.println(count++);        //prints 10 and count is 11 if we use after diz line
+} 
+}
+
+
+OPTIONS:
+A. 9
+B. 10
+C. 11
+D. 12
+E. Compilation fails.
+F. An exception is thrown at runtime
+
+ANS: B
