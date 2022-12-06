@@ -1,0 +1,24 @@
+public class Jail { 
+private int x = 4; 
+public static void main(String[] args) { 
+protected int x = 6;   //Illegal modifier for parameter x; only final is permitted
+new Jail().new Cell().slam(); 
+} 
+class Cell { 
+void slam() { System.out.println("throw away key " + x); } 
+} 
+}
+Which are true? (Choose all that apply.)
+A. Compilation succeeds.
+B. The output is "throw away key 4".
+C. The output is "throw away key 6".
+D. Compilation fails due to an error on line 5.
+E. Compilation fails due to an error on line 6.
+F. Compilation fails due to an error on line 9.
+
+-----------------------------------------------------------------------
+Line 4 is declaring local variable "x", and local variables cannot have access 
+modifiers. If line 4 read "int x = 6", the code would compile and the result would be 
+"throw away key 4". Line54 creates an anonymous Jail object, an anonymous Cell 
+object, and invokes slam(). Inner classes have access to their enclosing class’s private
+variables.
