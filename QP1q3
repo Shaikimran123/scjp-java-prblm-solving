@@ -1,0 +1,34 @@
+
+
+public class Fabric extends Thread { 
+	 public static void main(String[] args) { 
+	 Thread t1 = new Thread(new Fabric()); 
+	 Thread t2 = new Thread(new Fabric()); 
+	 t1.start(); 
+	 t2.start();
+	 } 
+	public  static void run() {  //This static method cannot hide the instance method from Thread
+	for(int i = 0; i < 2; i++) 
+	System.out.println(Thread.currentThread().getName() + " "); 
+	 } 
+	 }
+
+
+//Fabric does not correctly extend Thread because the run() method cannot be static. 
+//If run() was correctly implemented, thn the o/p follows 
+//. Thread names do NOT have to be sequentially assigned.
+
+Thread-1 
+Thread-1 
+Thread-3 
+Thread-3 
+-------------
+Thread-3 
+Thread-1 
+Thread-3 
+Thread-1 
+-------------
+Thread-1 
+Thread-1 
+Thread-3 
+Thread-3 
